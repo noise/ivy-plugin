@@ -491,7 +491,7 @@ public class IvyBuildTrigger extends Notifier implements DependecyDeclarer {
             VersionMatcher matcher = versionMatcher;
 
             // A null VersionMatcher means something is really wrong and we should not proceed to add the dependency
-            captures = (matcher != null && matcher.isDynamic(depRevId));
+            captures = matcher != null;
             if (captures) {
                 String dbranch = depRevId.getBranch();
                 String cbranch = cmrid.getBranch();
